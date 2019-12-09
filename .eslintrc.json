@@ -24,8 +24,6 @@
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "linebreak-style": 0,
-      "object-curly-newline": "off",
-      "react/prop-types": 0
+      "object-curly-newline": "off"
   }
     }
-}
