@@ -1,3 +1,4 @@
+
 import { StyleSheet } from 'react-native';
 import {
   sunny, sunnyLight, greyLight, darkSeaGreen

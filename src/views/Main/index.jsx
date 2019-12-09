@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import styles from './style';
+import logo from '../../resources/LOGO.png';
 
 const Main = ({ navigation: { navigate } }) => (
   <View style={styles.container}>
