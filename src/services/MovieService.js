@@ -2,7 +2,7 @@ const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1ZGVlNDM2MmQ2MDJk
 const ENDPOINT = 'http://api.kvikmyndir.is/theaters';
 
 export const GetAllCinemas = () => ({
-  GetAllCinemas: () => fetch(ENDPOINT, {
+  getCinemas: () => fetch(ENDPOINT, {
     method: 'GET',
     headers: {
       'x-access-token': token,
@@ -16,10 +16,10 @@ export const GetAllCinemas = () => ({
 });
 
 // Cinema Details
-export const GetCinemaDetails = (id) => ({
+export const GetCinemaDetails = (cinemaId) => ({
   getDetails: () => fetch(ENDPOINT)
     .then((d) => d.json())
-    .then((data) => data.filter((cinema) => cinema.id === id))
+    .then((data) => data.filter((cinema) => cinema.id === cinemaId))
     .then((data) => data.map((cinema) => ({
       id: cinema.id,
       name: cinema.name,
@@ -39,17 +39,18 @@ export const GetMoviesByCinemaId = (cinemaId) => ({
     },
   })
     .then((d) => d.json())
-    .then((data) => data.filter((movie) => movie.id === id))
-    .then((data) => data.map((movie) => ({
-      name: movie.title,
-      image: movie.poster,
-      plot: movie.plot,
-      duration: movie.durationMinutes,
-      year: movie.year,
-      genres: movie.genres,
-    }))),
+    .then((movies) => {
+      const temp = [];
+      for (let x = 0; x < movies.length; x += 1) {
+        for (let y = 0; y < movies[x].showtimes.length; y += 1) {
+          if (movies[x].showtimes[y].cinema.id === cinemaId) {
+            temp.push(movies[x]);
+          }
+        }
+      }
+      return temp;
+    }),
 });
-
 // Movie Details
 export const GetMovieDetailsById = (movieId, cinemaId) => ({
   getMovie: () => fetch(ENDPOINT, {
@@ -62,7 +63,7 @@ export const GetMovieDetailsById = (movieId, cinemaId) => ({
     .then((data) => data.filter((movie) => movie.id === movieId))
     .then((movie) => {
       const temp = [];
-      for (let x = 0; x < movie[0].showtimes.length; x + 1) {
+      for (let x = 0; x < movie[0].showtimes.length; x += 1) {
         if (movie[0].showtimes[x].cinema.id === cinemaId) {
           temp.push(movie[0].showtimes[x]);
         }
