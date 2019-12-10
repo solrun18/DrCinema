@@ -6,14 +6,15 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './src/reducers';
 import AppContainer from './src/routes';
+import Main from './src/views/Main';
 
 const ConnectedSubApp = connect(null)(AppContainer);
 
 export default function App() {
   return (
     <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-      <View>
-        <ConnectedSubApp />
+      <View style={{flex: 1, backgroundColor: 'black'}}>
+        <Main />
       </View>
     </Provider>
   );

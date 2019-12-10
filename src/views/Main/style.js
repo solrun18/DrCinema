@@ -1,14 +1,14 @@
 
 import { StyleSheet } from 'react-native';
 import {
-  sunny, sunnyLight, greyLight, darkSeaGreen
+  grayish, lighterBlue, darkerBlue
 } from '../../styles/colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 50,
     padding: 20,
-    backgroundColor: darkSeaGreen,
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'space-around',
   },
@@ -16,27 +16,27 @@ export default StyleSheet.create({
     marginTop: 30,
     paddingTop: 10,
     paddingBottom: 10,
-    paddingLeft: 100,
-    paddingRight: 100,
-    backgroundColor: sunnyLight,
+    paddingLeft: 70,
+    paddingRight: 70,
     borderRadius: 10,
+    backgroundColor: 'red',
+
   },
   buttonText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: greyLight,
     textAlign: 'center',
+    color: 'white',
   },
   logo: {
-    width: 200,
-    height: 200,
+    width: 350,
+    height: 300,
     alignItems: 'center',
   },
   logoText: {
-    marginTop: 20,
+    color: 'white',
     textAlign: 'center',
-    color: sunny,
     fontWeight: 'bold',
-    fontSize: 150,
+    fontSize: 30,
   },
 });
