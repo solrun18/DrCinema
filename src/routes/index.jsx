@@ -1,10 +1,23 @@
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import Main from '../views/Main';
+import Cinemas from '../views/Cinemas';
+import UpcomingMovies from '../views/UpcomingMovies'
 
-const StackNavigator = createStackNavigator({
-  Main
+const CinemaStackNavigator = createStackNavigator({
+  Main,
+  Cinemas
 });
 
-export default createAppContainer(StackNavigator);
+const UpcomingMoviesStackNavigator = createStackNavigator({
+  UpcomingMovies
+});
+
+const DrawerNavigator = createDrawerNavigator({
+  Cinemas: CinemaStackNavigator,
+  UpcomingMovies: UpcomingMoviesStackNavigator
+});
+
+export default createAppContainer(DrawerNavigator);
