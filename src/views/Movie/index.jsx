@@ -1,16 +1,31 @@
-import React from 'react';
-import { View, Text, Image} from 'react-native';
-import styles from './style';
-import * as Animatable from 'react-native-animatable';
 
-class Movie extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={{color:'white'}}>Blell</Text>
-      </View>
-    )
-  }
+import React from 'react';
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux'
+import * as Animatable from 'react-native-animatable';
+import styles from './style';
+import { getMovieDetailsById } from '../../actions/movieAction'
+
+const Movie = (props) => {
+  return (
+    <View style={styles.container}>
+      <Text style={{ color: 'white' }}>{props}</Text>
+    </View>
+  )
 }
 
-export default Movie;
+const mapStateToProps = ({
+  name,
+  image,
+  plot,
+  duration,
+  yearOfRelease,
+  genres }) => ({
+  name,
+  image,
+  plot,
+  duration,
+  yearOfRelease,
+  genres });
+
+export default connect(mapStateToProps)(Movie);
