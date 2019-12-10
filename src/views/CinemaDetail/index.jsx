@@ -3,7 +3,7 @@ import { View, Text, Image} from 'react-native';
 import styles from './style';
 import * as Animatable from 'react-native-animatable';
 
-class Cinemas extends React.Component {
+class CinemaDetail extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -13,4 +13,4 @@ class Cinemas extends React.Component {
   }
 }
 
-export default Cinemas;
+export default CinemaDetail;
