@@ -15,17 +15,11 @@ export const GetAllCinemas = () => ({
     }))),
 });
 
-// Cinema Details  onIncrement() {
-        const { counter } = this.state;
-        this.setState({ counter: counter + 1 });
-        const { incrementCounter } = this.props;
-        incrementCounter(1);
-    }
-    render() {
-export const GetCinemaDetails = (id) => ({
+// Cinema Details
+export const GetCinemaDetails = (cinemaId) => ({
   getDetails: () => fetch(ENDPOINT)
     .then((d) => d.json())
-    .then((data) => data.filter((cinema) => cinema.id === id))
+    .then((data) => data.filter((cinema) => cinema.id === cinemaId))
     .then((data) => data.map((cinema) => ({
       id: cinema.id,
       name: cinema.name,
@@ -45,17 +39,18 @@ export const GetMoviesByCinemaId = (cinemaId) => ({
     },
   })
     .then((d) => d.json())
-    .then((data) => data.filter((movie) => movie.id === id))
-    .then((data) => data.map((movie) => ({
-      name: movie.title,
-      image: movie.poster,
-      plot: movie.plot,
-      duration: movie.durationMinutes,
-      year: movie.year,
-      genres: movie.genres,
-    }))),
+    .then((movies) => {
+      const temp = [];
+      for (let x = 0; x < movies.length; x += 1) {
+        for (let y = 0; y < movies[x].showtimes.length; y += 1) {
+          if (movies[x].showtimes[y].cinema.id === cinemaId) {
+            temp.push(movies[x]);
+          }
+        }
+      }
+      return temp;
+    }),
 });
-
 // Movie Details
 export const GetMovieDetailsById = (movieId, cinemaId) => ({
   getMovie: () => fetch(ENDPOINT, {
@@ -68,7 +63,7 @@ export const GetMovieDetailsById = (movieId, cinemaId) => ({
     .then((data) => data.filter((movie) => movie.id === movieId))
     .then((movie) => {
       const temp = [];
-      for (let x = 0; x < movie[0].showtimes.length; x + 1) {
+      for (let x = 0; x < movie[0].showtimes.length; x += 1) {
         if (movie[0].showtimes[x].cinema.id === cinemaId) {
           temp.push(movie[0].showtimes[x]);
         }

@@ -4,14 +4,14 @@ import MovieService from '../services/MovieService';
 export const getCinemas = () => {
     return async dispatch => {
         try {
-            const currentDegree = await weatherService.getCurrentDegree();
-            dispatch(getCurrentDegreeSuccess(currentDegree));
+            const currentDegree = await MovieService.getCinemas();
+            dispatch(getCinemasSuccess(getCinemas));
         } catch (err) {
             // TODO: Should dispatch an error action
         }
     };
 }
-export const getCinemas = string => ({
+export const getCinemasSuccess = string => ({
   type: constants.GET_CINEMAS,
   payload: string,
 });
