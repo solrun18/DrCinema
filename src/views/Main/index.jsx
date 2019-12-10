@@ -6,7 +6,7 @@ import {
 import * as Animatable from 'react-native-animatable';
 import styles from './style';
 import logo from '../../resources/LOGO.png';
-import text_logo from '../../resources/Thinkbig.png'
+import text_logo from '../../resources/Thinkbigreal.png'
 
 class Main extends React.Component {
   render() {
