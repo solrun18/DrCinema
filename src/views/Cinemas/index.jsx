@@ -8,7 +8,7 @@ class Cinemas extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{color:'white'}}>Halluu</Text>
+        <Text style={{color:'white'}}>Cinemas</Text>
       </View>
     )
   }
