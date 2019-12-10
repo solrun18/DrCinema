@@ -10,7 +10,7 @@ class Cinemas extends React.Component {
     }
     onGetCinemas() {
         const { cinemaList } = this.state;
-        this.setState({ cinemaList: cinemaList + 1 });
+        this.setState({ cinemaList: cinemaList });
         const { getCinemas } = this.props;
         // incrementCounter(1);
     }

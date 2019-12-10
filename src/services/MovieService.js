@@ -2,7 +2,7 @@ const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1ZGVlNDM2MmQ2MDJk
 const ENDPOINT = 'http://api.kvikmyndir.is/theaters';
 
 export const GetAllCinemas = () => ({
-  GetAllCinemas: () => fetch(ENDPOINT, {
+  getCinemas: () => fetch(ENDPOINT, {
     method: 'GET',
     headers: {
       'x-access-token': token,
@@ -15,7 +15,13 @@ export const GetAllCinemas = () => ({
     }))),
 });
 
-// Cinema Details
+// Cinema Details  onIncrement() {
+        const { counter } = this.state;
+        this.setState({ counter: counter + 1 });
+        const { incrementCounter } = this.props;
+        incrementCounter(1);
+    }
+    render() {
 export const GetCinemaDetails = (id) => ({
   getDetails: () => fetch(ENDPOINT)
     .then((d) => d.json())
