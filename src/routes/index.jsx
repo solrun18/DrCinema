@@ -12,6 +12,7 @@ const CinemaStackNavigator = createStackNavigator({
 });
 
 const UpcomingMoviesStackNavigator = createStackNavigator({
+  Main,
   UpcomingMovies
 });
 
