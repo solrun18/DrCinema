@@ -14,7 +14,6 @@ class Cinemas extends React.Component {
         const { cinemaList } = this.state;
         this.setState({ cinemas: cinemaList });
         const { getCinemas } = this.props;
-        // incrementCounter(1);
     }
     render() {
         const { cinemaList } = this.state;
@@ -40,5 +39,3 @@ const mapStateToProps = ({
    cinemas: website,
  });
 export default connect(mapStateToProps)(Cinemas);
-// Returns a connected component
-// export default connect(null, { getCinemas })(Cinemas);

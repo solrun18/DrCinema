@@ -6,7 +6,6 @@ import styles from './style';
 
 class UpcomingMovies extends React.Component {
   componentDidMount() {
-    this.props.getUpcomingMovies();
   }
 
   render() {

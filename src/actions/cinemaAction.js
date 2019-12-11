@@ -6,10 +6,9 @@ export const getCinemas = () => {
   return async (dispatch) => {
     try {
       const cinemas = await GetAllCinemas();
-      dispatch(this.getCinemasSuccess(cinemas));
+      dispatch(getCinemasSuccess(cinemas));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemas');
-      return err;
     }
   };
 };
@@ -21,13 +20,14 @@ export const getCinemasSuccess = (cinemas) => ({
 
 
 export const getCinemaDetails = (cinemaId) => {
+  console.log(cinemaId);
   return async (dispatch) => {
     try {
       const cinemaDetails = await GetCinemaDetails(cinemaId);
-      dispatch(this.getCinemaDetailsSuccess(cinemaDetails));
+      console.log(cinemaDetails);
+      dispatch(getCinemaDetailsSuccess(cinemaDetails));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemaDetails');
-      return err
     }
   };
 }
