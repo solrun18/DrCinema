@@ -24,7 +24,6 @@ export const getCinemaDetails = (cinemaId) => {
   return async (dispatch) => {
     try {
       const cinemaDetails = await GetCinemaDetails(cinemaId);
-      console.log(cinemaDetails);
       dispatch(getCinemaDetailsSuccess(cinemaDetails));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemaDetails');

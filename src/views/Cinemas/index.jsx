@@ -35,7 +35,7 @@ class Cinemas extends React.Component {
 const mapStateToProps = ({
    name,
    website }) => ({
-   cinemas: name,
-   cinemas: website,
+   cinema: name,
+   cinema: website,
  });
 export default connect(mapStateToProps)(Cinemas);

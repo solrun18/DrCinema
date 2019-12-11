@@ -8,18 +8,20 @@ import { getCinemaDetails } from '../../actions/cinemaAction'
 
 class CinemaDetailInfo extends React.Component {
   state= {
-    cinemaDetails: '',
+    cinemaDetails: [],
   }
 
   async componentDidMount() {
+    const { getCinemaDetails } = this.props;
+    console.log(this.props);
     const newCinemaDetails = await getCinemaDetails(1);
+    console.log('GET CINEMAS DETAILS HERE!!!!', newCinemaDetails);
     this.setState({
       cinemaDetails: newCinemaDetails
     })
 
   }
   render() {
-    console.log('GET CINEMAS DETAILS HERE!!!!', this.state.cinemaDetails);
     return (
       <View style={styles.container}>
         <Text style={{color:'white'}}>Cinema Detailss INNFFOO</Text>
@@ -27,5 +29,7 @@ class CinemaDetailInfo extends React.Component {
     )
   }
 }
+
+
 
 export default connect(null, { getCinemaDetails })(CinemaDetailInfo);

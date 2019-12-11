@@ -20,9 +20,4 @@ const mapStateToProps = (state) => {
   const { upcomingMovies } = state
   return { upcomingMovies }
 };
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addFriend,
-  }, dispatch)
-);
 export default connect(null, { getUpcomingMovies })(UpcomingMovies);
