@@ -8,12 +8,12 @@ import UpcomingMovies from '../views/UpcomingMovies'
 
 const CinemaStackNavigator = createStackNavigator({
   Main,
-  Cinemas
+  Cinemas,
 });
 
 const UpcomingMoviesStackNavigator = createStackNavigator({
   Main,
-  UpcomingMovies
+  UpcomingMovies,
 });
 
 const DrawerNavigator = createDrawerNavigator({
