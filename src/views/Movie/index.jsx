@@ -9,7 +9,7 @@ import { getMovieDetailsById } from '../../actions/movieAction'
 const Movie = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={{ color: 'white' }}>{props}</Text>
+      <Text style={{ color: 'white' }}>hallo from movie</Text>
     </View>
   )
 }

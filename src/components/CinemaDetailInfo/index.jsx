@@ -4,10 +4,13 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux'
 import * as Animatable from 'react-native-animatable';
 import styles from './style';
-import { GetMoviesByCinemaId } from '../../actions/movieAction';
-import CinemaDetailInfo from '../../components/CinemaDetailInfo';
+import { getCinemaDetails  } from '../../actions/cinemaAction'
 
 class CinemaDetail extends React.Component {
+  componentDidMount() {
+    // tryng to add current cinema to be able to find cinema deitails by id
+    console.log(this.props);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -30,4 +33,4 @@ const mapStateToProps = ({
   phone,
   website });
 
-export default connect(mapStateToProps)(CinemaDetail);
+export default connect(mapStateToProps)(CinemaDetailInfo);
