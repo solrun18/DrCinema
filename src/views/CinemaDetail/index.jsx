@@ -13,7 +13,7 @@ class CinemaDetail extends React.Component {
         <Text style={{color:'white'}}>Cinema Detailss</Text>
         <CinemaDetailInfo />
       </View>
-    )
+    );
   }
 }
 
