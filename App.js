@@ -5,14 +5,14 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './src/reducers';
 import AppContainer from './src/routes';
-import Main from './src/views/Main';
-import CinemaDetail from './src/views/CinemaDetail';
+// import Main from './src/views/Main';
+// import Cinemas from './src/views/Cinemas';
 
 export default function App() {
   return (
     <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-      <View style={{flex: 1, backgroundColor: 'black'}}>
-        <CinemaDetail />
+      <View style={{ flex: 1, backgroundColor: 'black' }}>
+        <AppContainer />
       </View>
     </Provider>
   );

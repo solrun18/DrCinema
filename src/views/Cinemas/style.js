@@ -8,4 +8,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
   },
+  text: {
+    color: 'white',
+    fontSize: 20,
+  },
 });

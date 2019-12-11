@@ -5,7 +5,9 @@ import { GetCinemaDetails, GetAllCinemas } from '../services/MovieService';
 export const getCinemas = () => {
   return async (dispatch) => {
     try {
+      console.log('boobs');
       const cinemas = await GetAllCinemas();
+      console.log('inside async', cinemas);
       dispatch(this.getCinemasSuccess(cinemas));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemas');
@@ -14,11 +16,13 @@ export const getCinemas = () => {
   };
 };
 
-export const getCinemasSuccess = (cinemas) => ({
+export const getCinemasSuccess = (cinemas) => {
+  console.log('inside succes', cinemas);
+  return {
   type: constants.GET_CINEMAS,
   payload: cinemas,
-});
-
+  };
+}
 
 export const getCinemaDetails = (cinemaId) => {
   return async (dispatch) => {
