@@ -10,6 +10,7 @@ export const GetAllCinemas = () => ({
   })
     .then((d) => d.json())
     .then((data) => data.map((cinema) => ({
+      id: cinema.id,
       name: cinema.title,
       website: cinema.website,
     }))),
