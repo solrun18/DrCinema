@@ -1,13 +1,15 @@
+
 import * as constants from '../constants';
-import MovieService from '../services/MovieService';
+import { GetCinemaDetails, GetAllCinemas } from '../services/MovieService';
 
 export const getCinemas = () => {
   return async (dispatch) => {
     try {
-      const cinemas = await MovieService.getCinemas();
-      dispatch(getCinemasSuccess(cinemas));
+      const cinemas = await GetAllCinemas();
+      dispatch(this.getCinemasSuccess(cinemas));
     } catch (err) {
-      // TODO: Should dispatch an error action
+      console.log('We had an ERROR in movieAction --> getCinemas');
+      return err;
     }
   };
 };
@@ -17,7 +19,20 @@ export const getCinemasSuccess = (cinemas) => ({
   payload: cinemas,
 });
 
-export const getCinemaDetails = (cinemaDetails) => ({
+
+export const getCinemaDetails = (cinemaId) => {
+  return async (dispatch) => {
+    try {
+      const cinemaDetails = await GetCinemaDetails(cinemaId);
+      dispatch(this.getCinemaDetailsSuccess(cinemaDetails));
+    } catch (err) {
+      console.log('We had an ERROR in movieAction --> getCinemaDetails');
+      return err
+    }
+  };
+}
+
+export const getCinemaDetailsSuccess = (cinemaDetails) => ({
   type: constants.GET_CINEMA_DETAILS,
   payload: cinemaDetails,
 });

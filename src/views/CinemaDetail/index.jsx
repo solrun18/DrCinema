@@ -4,7 +4,6 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux'
 import * as Animatable from 'react-native-animatable';
 import styles from './style';
-import { GetMoviesByCinemaId } from '../../actions/movieAction';
 import CinemaDetailInfo from '../../components/CinemaDetailInfo';
 
 class CinemaDetail extends React.Component {
