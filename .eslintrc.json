@@ -21,6 +21,7 @@
     "linebreak-style": 0,
     "object-curly-newline": "off",
     "no-tabs": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/prefer-stateless-function": "off"
   }
 }

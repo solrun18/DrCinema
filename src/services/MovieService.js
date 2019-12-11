@@ -14,7 +14,6 @@ export const GetAllCinemas = () => ({
       website: cinema.website,
     }))),
 });
-
 // Cinema Details
 export const GetCinemaDetails = (cinemaId) => ({
   getDetails: () => fetch(ENDPOINT)
@@ -30,7 +29,6 @@ export const GetCinemaDetails = (cinemaId) => ({
       city: cinema.city,
     }))),
 });
-
 export const GetMoviesByCinemaId = (cinemaId) => ({
   getMovies: () => fetch(ENDPOINT, {
     method: 'GET',
@@ -49,7 +47,14 @@ export const GetMoviesByCinemaId = (cinemaId) => ({
         }
       }
       return temp;
-    }),
+    })
+    .then((d) => d.map((movie) => ({
+      id: movie.id,
+      name: movie.title,
+      image: movie.poster,
+      releaseYear: movie.year,
+      genres: movie.genres,
+    }))),
 });
 // Movie Details
 export const GetMovieDetailsById = (movieId, cinemaId) => ({
