@@ -22,5 +22,17 @@ export default StyleSheet.create({
     borderRadius: 2,
     borderColor: 'red',
     borderWidth: 0.5,
-  }
+  },
+  movieContainer: {
+    flex: 1,
+    alignSelf: 'center',
+    borderRadius: 2,
+    borderColor: 'blue',
+    borderWidth: 0.5,
+  },
+  image: {
+    alignItems: 'center',
+    width: 100,
+    height: 150,
+  },
 });

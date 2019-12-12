@@ -24,17 +24,19 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
         keyExtractor={(cinemaDetail) => cinemaDetail.id}
       />
       <FlatList
+        numColumns={2}
         data={cinemaMovies}
         extraData={cinemaMovies}
         style={styles.list}
         renderItem={({ item: { name, image, releaseYear } }) => {
           return (
-            <View>
+            <View style={styles.movieContainer}>
               <Text style={styles.text}>{name}</Text>
-              <Image
-              source={{uri: {image}}}
-              />
               <Text style={styles.text}>{releaseYear}</Text>
+              <Image
+                source={{ uri: image }}
+                style={styles.image}
+              />
             </View>
           );
         }}
