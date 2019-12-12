@@ -6,7 +6,7 @@ import styles from './style';
 
 const UpcomingMovieList = (props) => {
   console.log(props.upcomingMovies);
-  var temp = [];
+  let temp = [];
   for(x = 0; x < props.upcomingMovies.length; x+=1 ) {
     temp.push(
       <View key = {x} style={{flexDirection: 'row'}}>
