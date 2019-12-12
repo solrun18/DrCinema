@@ -6,13 +6,13 @@ import thunk from 'redux-thunk';
 import reducers from './src/reducers';
 import AppContainer from './src/routes';
 import Main from './src/views/Main';
-import CinemaDetail from './src/views/CinemaDetail';
+import UpcomingMovies from './src/views/UpcomingMovies';
 
 export default function App() {
   return (
     <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-      <View style={{flex: 1, backgroundColor: 'black'}}>
-        <CinemaDetail />
+      <View>
+        <UpcomingMovies />
       </View>
     </Provider>
   );

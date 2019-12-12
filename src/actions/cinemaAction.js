@@ -8,7 +8,6 @@ export const getCinemas = () => {
       const cinemas = await GetAllCinemas();
       dispatch(this.getCinemasSuccess(cinemas));
     } catch (err) {
-      console.log('We had an ERROR in movieAction --> getCinemas');
       return err;
     }
   };

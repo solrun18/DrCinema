@@ -10,9 +10,10 @@ const UpcomingService = () => ({
   })
     .then((d) => d.json())
     .then((data) => data.map((movie) => ({
+      id: movie.id,
       title: movie.title,
       poster: movie.poster,
-      release_date: movie['release-dateIS'],
+      releaseDate: movie['release-dateIS'],
     }))),
 });
 
