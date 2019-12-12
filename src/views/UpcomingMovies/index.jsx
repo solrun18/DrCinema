@@ -5,9 +5,8 @@ import getUpcomingMovies from '../../actions/upcomingAction';
 import styles from './style';
 
 class UpcomingMovies extends React.Component {
-  // componentDidMount() {
-  //   this.props.getUpcomingMovies();
-  // }
+  componentDidMount() {
+  }
 
   render() {
     return (

@@ -7,11 +7,14 @@ export const getCinemas = () => {
     try {
       console.log('boobs');
       const cinemas = await GetAllCinemas();
+<<<<<<< HEAD
       console.log('inside async', cinemas);
       dispatch(this.getCinemasSuccess(cinemas));
+=======
+      dispatch(getCinemasSuccess(cinemas));
+>>>>>>> 7c4982a9e98c944370bf5ed98b1a76a0ec4ebadc
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemas');
-      return err;
     }
   };
 };
@@ -25,13 +28,14 @@ export const getCinemasSuccess = (cinemas) => {
 }
 
 export const getCinemaDetails = (cinemaId) => {
+  console.log(cinemaId);
   return async (dispatch) => {
     try {
       const cinemaDetails = await GetCinemaDetails(cinemaId);
-      dispatch(this.getCinemaDetailsSuccess(cinemaDetails));
+      console.log(cinemaDetails);
+      dispatch(getCinemaDetailsSuccess(cinemaDetails));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemaDetails');
-      return err
     }
   };
 }

@@ -8,7 +8,6 @@ export const getMovieDetailsById = (movieId, cinemaId) => {
       dispatch(this.getMovieDetailsByIdSuccess(movie));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> GetMovieDetailsById');
-      return err
     }
   };
 }
