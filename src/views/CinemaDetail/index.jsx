@@ -9,7 +9,7 @@ import { getCinemaMovies } from '../../actions/cinemaAction';
 
 class CinemaDetail extends React.Component {
   async componentDidMount() {
-    await this.props.getCinemaMovies();
+    await this.props.getCinemaMovies(this.props.cinemaDetails[0].id);
   }
 
   render() {
