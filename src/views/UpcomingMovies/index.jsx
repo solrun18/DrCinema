@@ -14,13 +14,17 @@ class UpcomingMovies extends React.Component {
     return (
       <ScrollView>
         <UpcomingMovieList
-          props={this.props.upcomingMovies}
+          upcomingMovies={this.props.upcomingMovies}
         />
       </ScrollView>
     );
   }
 }
 
-const mapStateToProps = ({ upcomingMovies }) => ({ upcomingMovies });
+const mapStateToProps = (state) => {
+  return {
+    upcomingMovies: state.upcomingMovies
+  };
+};
 
 export default connect(mapStateToProps, { getUpcomingMovies })(UpcomingMovies);

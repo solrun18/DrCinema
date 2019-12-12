@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, SafeAreaView, FlatList, TouchableOpacity, View } from 'react-native';
-import PropTypes from 'prop-types';
 import styles from './style';
 
 const CinemaList = ({ cinemas, onPress }) => {
@@ -27,11 +26,6 @@ const CinemaList = ({ cinemas, onPress }) => {
       />
     </SafeAreaView>
   );
-};
-
-CinemaList.propTypes = {
-  cinemas: PropTypes.func.isRequired,
-  onPress: PropTypes.func.isRequired,
 };
 
 export default CinemaList;
