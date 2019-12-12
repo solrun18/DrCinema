@@ -12,7 +12,7 @@ class UpcomingMovies extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
         <UpcomingMovieList
           upcomingMovies={this.props.upcomingMovies}
         />

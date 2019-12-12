@@ -14,6 +14,7 @@ const UpcomingService = () => ({
       title: movie.title,
       poster: movie.poster,
       releaseDate: movie['release-dateIS'],
+      trailers: movie.trailers,
     }))),
 });
 

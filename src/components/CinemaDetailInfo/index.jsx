@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, View, Text, SafeAreaView, FlatList } from 'react-native';
+import { Image, ScrollView, View, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './style';
 

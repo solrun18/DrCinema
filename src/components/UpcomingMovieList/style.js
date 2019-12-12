@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
-    width: 100,
+    width: 200,
     height: 150,
   },
   button: {
@@ -22,8 +22,8 @@ export default StyleSheet.create({
   text: {
     alignSelf: 'center',
     textAlign: 'center',
-    fontSize: 15,
-    color: 'black',
+    fontSize: 20,
+    color: 'white',
     paddingTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
@@ -31,5 +31,11 @@ export default StyleSheet.create({
   movieContainer: {
     flex: 1,
     alignItems: 'center',
+  },
+  container: {
+    marginHorizontal: 30,
+    backgroundColor: '#3b3b3b',
+    marginTop: 60,
+    paddingTop: 60,
   },
 });
