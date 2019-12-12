@@ -6,4 +6,8 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
+  image: {
+    width: 100,
+    height: 150,
+  },
 });
