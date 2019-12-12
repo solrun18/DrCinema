@@ -30,7 +30,7 @@ class Cinemas extends React.Component {
 const mapStateToProps = (state) => {
   return {
     cinemas: state.cinemas
-  }
+  };
 };
 
 export default connect(mapStateToProps, { getCinemas })(Cinemas);
