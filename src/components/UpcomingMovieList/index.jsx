@@ -6,7 +6,7 @@ const UpcomingMovieList = ({ upcomingMovies }) => {
   return (
     <SafeAreaView>
       <FlatList
-        data={upcomingMovies}
+        data={upcomingMovies.sort((b, a) => a.releaseDate.localeCompare(b.releaseDate))}
         extraData={upcomingMovies}
         style={styles.container}
         renderItem={({ item: { title, poster, releaseDate } }) => {
