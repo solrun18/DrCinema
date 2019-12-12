@@ -1,23 +1,23 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList } from 'react-native';
+import { Image, ScrollView, View, Text, SafeAreaView, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './style';
 
 const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
   return (
-    <SafeAreaView>
+    <ScrollView>
       <FlatList
         data={cinemaDetails}
         extraData={cinemaDetails}
         style={styles.container}
         renderItem={({ item: { name, description, address, phone, website } }) => {
           return (
-            <View style={styles.itemText}>
-              <Text>{name}</Text>
-              <Text>{description}</Text>
-              <Text>{address}</Text>
-              <Text>{phone}</Text>
-              <Text>{website}</Text>
+            <View>
+              <Text style={styles.text}>{name}</Text>
+              <Text style={styles.description}>{description}</Text>
+              <Text style={styles.text}>{address}</Text>
+              <Text style={styles.text}>{phone}</Text>
+              <Text style={styles.text}>{website}</Text>
             </View>
           );
         }}
@@ -26,19 +26,21 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
       <FlatList
         data={cinemaMovies}
         extraData={cinemaMovies}
-        style={styles.container}
+        style={styles.list}
         renderItem={({ item: { name, image, releaseYear } }) => {
           return (
-            <View style={styles.itemText}>
-              <Text>{name}</Text>
-              <Text>{image}</Text>
-              <Text>{releaseYear}</Text>
+            <View>
+              <Text style={styles.text}>{name}</Text>
+              <Image
+              source={{uri: {image}}}
+              />
+              <Text style={styles.text}>{releaseYear}</Text>
             </View>
           );
         }}
         keyExtractor={(cinemaMovie) => cinemaMovie.id}
       />
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
