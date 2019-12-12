@@ -18,7 +18,7 @@ const UpcomingMoviesStackNavigator = createStackNavigator({
 
 const DrawerNavigator = createDrawerNavigator({
   Cinemas: CinemaStackNavigator,
-  UpcomingMovies: UpcomingMoviesStackNavigator
+  UpcomingMovies: UpcomingMoviesStackNavigator,
 });
 
 export default createAppContainer(DrawerNavigator);
