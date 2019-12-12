@@ -1,4 +1,4 @@
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1ZGVlNDM2MmQ2MDJkMDc3OTYyOTVhNzMiLCJnbG9iYWxhZG1pbiI6ZmFsc2UsImFkbWluIjpmYWxzZSwiYWN0aXZlIjp0cnVlLCJmdWxsbmFtZSI6IlPDs2xyw7puIMOBc3RhIEJqw7ZybnNkw7N0dGlyIiwiZW1haWwiOiJzb2xydW4xOEBydS5pcyIsInVzZXJuYW1lIjoic29scnVuIiwicGFzc3dvcmQiOiIkMmEkMDgkRmZ3WWFoYWFHSTcwSWN5M2NGcUlRdTZldzJERk81b2RkYjY4WXhGMVdtT0d5dUFOenFzdTYiLCJkb21haW4iOiIgaHR0cDovLyBhcGkua3Zpa215bmRpci5pcy8iLCJtZXNzYWdlIjoiUlUgU2Nob29sIHByb2plY3QiLCJpYXQiOjE1NzYwNzU1MDUsImV4cCI6MTU3NjE2MTkwNX0.1SK6UhZcC6_-DIc8L55GTALdPcxjP7k-NjpleVi0rl4';
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1ZGVlNDM2MmQ2MDJkMDc3OTYyOTVhNzMiLCJnbG9iYWxhZG1pbiI6ZmFsc2UsImFkbWluIjpmYWxzZSwiYWN0aXZlIjp0cnVlLCJmdWxsbmFtZSI6IlPDs2xyw7puIMOBc3RhIEJqw7ZybnNkw7N0dGlyIiwiZW1haWwiOiJzb2xydW4xOEBydS5pcyIsInVzZXJuYW1lIjoic29scnVuIiwicGFzc3dvcmQiOiIkMmEkMDgkRmZ3WWFoYWFHSTcwSWN5M2NGcUlRdTZldzJERk81b2RkYjY4WXhGMVdtT0d5dUFOenFzdTYiLCJkb21haW4iOiIgaHR0cDovLyBhcGkua3Zpa215bmRpci5pcy8iLCJtZXNzYWdlIjoiUlUgU2Nob29sIHByb2plY3QiLCJpYXQiOjE1NzYxNDk4NDksImV4cCI6MTU3NjIzNjI0OX0.pnH5_L9vqRSQuSPmCqVGE0jpieMn7vtyZzlHJr35fd8';
 const CINEMAENDPOINT = 'http://api.kvikmyndir.is/theaters';
 const MOVIEENDPOINT = 'http://api.kvikmyndir.is/movies';
 const fetch = require('node-fetch');
@@ -13,21 +13,6 @@ export const GetAllCinemas = () => ({
     .then((d) => d.json())
     .then((data) => data.map((cinema) => ({
       id: cinema.id,
-      name: cinema.title,
-      website: cinema.website,
-    }))),
-});
-// Cinema Details
-export const GetCinemaDetails = (cinemaId) => ({
-  getDetails: () => fetch(CINEMAENDPOINT, {
-    method: 'GET',
-    headers: {
-      'x-access-token': token,
-    } })
-    .then((d) => d.json())
-    .then((data) => data.filter((cinema) => cinema.id === cinemaId))
-    .then((data) => data.map((cinema) => ({
-      id: cinema.id,
       name: cinema.name,
       website: cinema.website,
       phone: cinema.phone,
@@ -36,6 +21,7 @@ export const GetCinemaDetails = (cinemaId) => ({
       city: cinema.city,
     }))),
 });
+// Movies in certain cinemas
 export const GetMoviesByCinemaId = (cinemaId) => ({
   getMovies: () => fetch(MOVIEENDPOINT, {
     method: 'GET',

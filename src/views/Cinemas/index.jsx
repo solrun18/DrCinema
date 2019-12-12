@@ -1,41 +1,36 @@
 import React from 'react';
-import { View, Text, Flatlist } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
-import { CinemaDetail } from '../CinemaDetail';
+import CinemaDetail from '../CinemaDetail';
+import CinemaList from '../../components/CinemaList';
 import styles from './style';
 import { getCinemas } from '../../actions/cinemaAction';
 
 class Cinemas extends React.Component {
-    state = {
-        cinemaList: []
-    }
-    onGetCinemas() {
-        const { cinemaList } = this.state;
-        this.setState({ cinemas: cinemaList });
-        const { getCinemas } = this.props;
-    }
-    render() {
-        const { cinemaList } = this.state;
-        return (
-            <View style={ styles.container }>
-              <Text>fuk</Text>
-              {/*<Flatlist
-                data{cinemaList}
-                extraData={cinemaList}
-                renderItem={({ item: })}
-                >
-                </Flatlist>*/}
-                {/* Her þurfum við navigation i CinemaDetail held ég*/}
-            </View>
-        )
-    }
-}
+  async componentDidMount() {
+    await this.props.getCinemas();
+  }
 
-const mapStateToProps = ({
-   name,
-   website }) => ({
-   cinema: name,
-   cinema: website,
- });
-export default connect(mapStateToProps)(Cinemas);
+  render() {
+    const { navigation: {navigate} } = this.props
+    return (
+      <View style={styles.container}>
+        <CinemaList
+          onPress={(id, name, description, address, phone, website) =>
+            navigate('CinemaDetail', { id, name, description, address, phone, website })
+          }
+          cinemas={this.props.cinemas}
+        />
+      </View>
+    )
+  }
+}
+// export default connect(null, { getCinemas })(Cinemas);
+const mapStateToProps = (state) => {
+  return {
+    cinemas: state.cinemas
+  }
+};
+
+export default connect(mapStateToProps, { getCinemas })(Cinemas);
