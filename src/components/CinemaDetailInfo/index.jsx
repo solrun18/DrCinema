@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux'
-import * as Animatable from 'react-native-animatable';
 import styles from './style';
 import { getCinemaDetails } from '../../actions/cinemaAction'
 
@@ -22,7 +20,7 @@ class CinemaDetailInfo extends React.Component {
     console.log('GET CINEMAS DETAILS HERE!!!!', this.state.cinemaDetails);
     return (
       <View style={styles.container}>
-        <Text style={{color:'white'}}>Cinema Detailss INNFFOO</Text>
+        <Text style={{ color: 'white' }}>Cinema Detailss INNFFOO</Text>
       </View>
     )
   }
