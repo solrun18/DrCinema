@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Flatlist } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
 import CinemaDetail from '../CinemaDetail';
@@ -17,8 +17,8 @@ class Cinemas extends React.Component {
     return (
       <View style={styles.container}>
         <CinemaList
-          onPress={(id, name, website) =>
-            navigate('CinemaDetail', { id, name, website })
+          onPress={(id, name, description, address, phone, website) =>
+            navigate('CinemaDetail', { id, name, description, address, phone, website })
           }
           cinemas={this.props.cinemas}
         />
@@ -28,7 +28,6 @@ class Cinemas extends React.Component {
 }
 // export default connect(null, { getCinemas })(Cinemas);
 const mapStateToProps = (state) => {
-  console.log("state in mapStateToProps", state)
   return {
     cinemas: state.cinemas
   }

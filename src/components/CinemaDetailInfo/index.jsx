@@ -1,29 +1,50 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { connect } from 'react-redux'
+import { View, Text, SafeAreaView, FlatList } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './style';
-import { getCinemaDetails } from '../../actions/cinemaAction'
 
-class CinemaDetailInfo extends React.Component {
-  state= {
-    cinemaDetails: '',
-  }
+const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
+  return (
+    <SafeAreaView>
+      <FlatList
+        data={cinemaDetails}
+        extraData={cinemaDetails}
+        style={styles.container}
+        renderItem={({ item: { name, description, address, phone, website } }) => {
+          return (
+            <View style={styles.itemText}>
+              <Text>{name}</Text>
+              <Text>{description}</Text>
+              <Text>{address}</Text>
+              <Text>{phone}</Text>
+              <Text>{website}</Text>
+            </View>
+          );
+        }}
+        keyExtractor={(cinemaDetail) => cinemaDetail.id}
+      />
+      <FlatList
+        data={cinemaMovies}
+        extraData={cinemaMovies}
+        style={styles.container}
+        renderItem={({ item: { name, image, releaseYear } }) => {
+          return (
+            <View style={styles.itemText}>
+              <Text>{name}</Text>
+              <Text>{image}</Text>
+              <Text>{releaseYear}</Text>
+            </View>
+          );
+        }}
+        keyExtractor={(cinemaMovie) => cinemaMovie.id}
+      />
+    </SafeAreaView>
+  );
+};
 
-  async componentDidMount() {
-    const newCinemaDetails = await getCinemaDetails(1);
-    this.setState({
-      cinemaDetails: newCinemaDetails
-    })
+CinemaDetailInfo.propTypes = {
+  cinemaDetails: PropTypes.func.isRequired,
+  cinemaMovies: PropTypes.func.isRequired,
+};
 
-  }
-  render() {
-    console.log('GET CINEMAS DETAILS HERE!!!!', this.state.cinemaDetails);
-    return (
-      <View style={styles.container}>
-        <Text style={{ color: 'white' }}>Cinema Detailss INNFFOO</Text>
-      </View>
-    )
-  }
-}
-
-export default connect(null, { getCinemaDetails })(CinemaDetailInfo);
+export default CinemaDetailInfo;

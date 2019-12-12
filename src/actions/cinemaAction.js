@@ -1,13 +1,12 @@
 
 import * as constants from '../constants';
-import { GetCinemaDetails, GetAllCinemas } from '../services/MovieService';
+import { GetAllCinemas, GetMoviesByCinemaId } from '../services/MovieService';
 
-export const getCinemasSuccess = (cinemas) => {
-  return {
+
+export const getCinemasSuccess = (cinemas) => ({
   type: constants.GET_CINEMAS,
   payload: cinemas,
-  };
-}
+});
 
 export const getCinemas = () => {
   return async (dispatch) => {
@@ -20,22 +19,20 @@ export const getCinemas = () => {
   };
 };
 
+export const getMoviesByCinemaIdSuccess = (cinemaMovies) => ({
+  type: constants.GET_CINEMA_MOVIES,
+  payload: cinemaMovies,
+});
 
-
-export const getCinemaDetails = (cinemaId) => {
-  console.log(cinemaId);
+export const getCinemaMovies = (cinemaId) => {
+  console.log('inside cinema details async', cinemaId);
   return async (dispatch) => {
     try {
-      const cinemaDetails = await GetCinemaDetails(cinemaId);
-      console.log(cinemaDetails);
-      dispatch(getCinemaDetailsSuccess(cinemaDetails));
+      const cinemaMovies = await GetMoviesByCinemaId(cinemaId).getMovies();
+      console.log('const cinemaDetails', cinemaMovies);
+      dispatch(getMoviesByCinemaIdSuccess(cinemaMovies));
     } catch (err) {
       console.log('We had an ERROR in movieAction --> getCinemaDetails');
     }
   };
 }
-
-export const getCinemaDetailsSuccess = (cinemaDetails) => ({
-  type: constants.GET_CINEMA_DETAILS,
-  payload: cinemaDetails,
-});
