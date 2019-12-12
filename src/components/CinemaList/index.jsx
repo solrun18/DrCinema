@@ -6,18 +6,17 @@ const CinemaList = ({ cinemas, onPress }) => {
   return (
     <SafeAreaView>
       <FlatList
-        data={cinemas}
+        data={cinemas.sort((a, b) => a.name.localeCompare(b.name))}
         extraData={cinemas}
-        style={styles.container}
         renderItem={({ item: { id, name, website } }) => {
           return (
             <TouchableOpacity
-              style={styles.itemContainer}
+              style={styles.container}
               onPress={() => onPress(id, name, website)}
             >
               <View>
-                <Text style={styles.text}>{name}</Text>
-                <Text style={styles.text}>{website}</Text>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.website}>{website}</Text>
               </View>
             </TouchableOpacity>
           );

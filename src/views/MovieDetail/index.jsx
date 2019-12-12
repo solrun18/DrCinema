@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, FlatList } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux'
 import styles from './style';
@@ -9,11 +9,9 @@ import MovieDetailInfo from '../../components/MovieDetailInfo';
 class MovieDetail extends React.Component {
   render() {
     return(
-      <ScrollView>
-        <MovieDetailInfo
-          cinemaMovie={this.props.movieDetails}
-        />
-      </ScrollView>
+      <View>
+        <Text>LOLLLLOLOLOLO</Text>
+      </View>
     )
   }
 }
