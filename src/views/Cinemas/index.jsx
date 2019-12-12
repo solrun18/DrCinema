@@ -9,30 +9,29 @@ import { getCinemas } from '../../actions/cinemaAction';
 
 class Cinemas extends React.Component {
   async componentDidMount() {
-    const allCinemas = await this.props.getCinemas();
-    this.setState({
-      cinemas: allCinemas
-    });
+    await this.props.getCinemas();
   }
+
   render() {
-    const { cinemas } = this.state;
-      const { navigation: { navigate } } = this.props;
-      return (
-          <View style={ styles.container }>
-            <Text style={styles.text}>fuk</Text>
-            <CinemaList
-              onPress={(id, name, website) =>
-                navigate('CinemaDetail', { id, name, website })
-              }
-              cinemas={cinemas}
-            />
-          </View>
-      )
+    const { navigation: {navigate} } = this.props
+    return (
+      <View style={styles.container}>
+        <CinemaList
+          onPress={(id, name, website) =>
+            navigate('CinemaDetail', { id, name, website })
+          }
+          cinemas={this.props.cinemas}
+        />
+      </View>
+    )
   }
 }
 // export default connect(null, { getCinemas })(Cinemas);
 const mapStateToProps = (state) => {
-  return { cinemas: state };
+  console.log("state in mapStateToProps", state)
+  return {
+    cinemas: state.cinemas
+  }
 };
 
-export default connect(mapStateToProps, {getCinemas})(Cinemas);
+export default connect(mapStateToProps, { getCinemas })(Cinemas);

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './style';
 
 const CinemaList = ({ cinemas, onPress }) => {
-  console.log(cinemas);
   return (
     <SafeAreaView>
       <FlatList
