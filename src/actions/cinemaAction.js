@@ -3,7 +3,6 @@ import * as constants from '../constants';
 import { GetCinemaDetails, GetAllCinemas } from '../services/MovieService';
 
 export const getCinemasSuccess = (cinemas) => {
-  console.log('inside succes', cinemas);
   return {
   type: constants.GET_CINEMAS,
   payload: cinemas,
