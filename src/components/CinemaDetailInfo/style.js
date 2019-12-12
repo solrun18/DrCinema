@@ -8,9 +8,12 @@ export default StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
+    textAlign: 'center',
     fontSize: 20,
     color: '#ffffff',
     paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   description: {
     alignSelf: 'center',
@@ -18,17 +21,9 @@ export default StyleSheet.create({
     color: '#ffffff',
     paddingTop: 10,
   },
-  list: {
-    borderRadius: 2,
-    borderColor: 'red',
-    borderWidth: 0.5,
-  },
   movieContainer: {
     flex: 1,
-    alignSelf: 'center',
-    borderRadius: 2,
-    borderColor: 'blue',
-    borderWidth: 0.5,
+    alignItems: 'center',
   },
   image: {
     alignItems: 'center',

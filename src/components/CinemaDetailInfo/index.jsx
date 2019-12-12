@@ -27,7 +27,6 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
         numColumns={2}
         data={cinemaMovies}
         extraData={cinemaMovies}
-        style={styles.list}
         renderItem={({ item: { name, image, releaseYear } }) => {
           return (
             <View style={styles.movieContainer}>
