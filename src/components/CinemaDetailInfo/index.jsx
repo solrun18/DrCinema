@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList } from 'react-native';
+import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './style';
 
 const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
+  const { navigation:{navigate}} = this.props;
   return (
     <SafeAreaView>
       <FlatList
@@ -29,11 +30,15 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
         style={styles.container}
         renderItem={({ item: { name, image, releaseYear } }) => {
           return (
-            <View style={styles.itemText}>
-              <Text>{name}</Text>
-              <Text>{image}</Text>
-              <Text>{releaseYear}</Text>
-            </View>
+            <TouchableOpacity
+              onPress={() => navigate('MovieDetail', { name, image, releaseYear })}
+            >
+              <View style={styles.itemText}>
+                <Text>{name}</Text>
+                <Text>{image}</Text>
+                <Text>{releaseYear}</Text>
+              </View>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={(cinemaMovie) => cinemaMovie.id}
