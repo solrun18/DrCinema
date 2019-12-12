@@ -10,12 +10,12 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
         data={cinemaDetails}
         extraData={cinemaDetails}
         style={styles.container}
-        renderItem={({ item: { name, description, address, phone, website } }) => {
+        renderItem={({ item: { name, description, address, phone, website, city } }) => {
           return (
             <View>
               <Text style={styles.text}>{name}</Text>
               <Text style={styles.description}>{description}</Text>
-              <Text style={styles.text}>{address}</Text>
+              <Text style={styles.text}>{address}, {city}</Text>
               <Text style={styles.text}>{phone}</Text>
               <Text style={styles.text}>{website}</Text>
             </View>
