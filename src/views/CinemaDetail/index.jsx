@@ -13,7 +13,6 @@ class CinemaDetail extends React.Component {
   }
 
   render() {
-    console.log('inni i render', this.props.cinemaDetails)
     return (
       <View style={styles.container}>
         <CinemaDetailInfo

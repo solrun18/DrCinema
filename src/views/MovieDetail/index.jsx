@@ -23,4 +23,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(CinemaDetail);
+export default connect(mapStateToProps)(MovieDetail);

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './style';
 
 const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
-  const { navigation:{navigate}} = this.props;
+  // const { navigation:{navigate}} = this.props;
   return (
     <SafeAreaView>
       <FlatList
@@ -30,15 +30,11 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies }) => {
         style={styles.container}
         renderItem={({ item: { name, image, releaseYear } }) => {
           return (
-            <TouchableOpacity
-              onPress={() => navigate('MovieDetail', { name, image, releaseYear })}
-            >
               <View style={styles.itemText}>
                 <Text>{name}</Text>
                 <Text>{image}</Text>
                 <Text>{releaseYear}</Text>
               </View>
-            </TouchableOpacity>
           );
         }}
         keyExtractor={(cinemaMovie) => cinemaMovie.id}
