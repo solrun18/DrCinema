@@ -11,8 +11,8 @@ import UpcomingMovies from './src/views/UpcomingMovies';
 export default function App() {
   return (
     <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-      <View>
-        <UpcomingMovies />
+      <View style={{flex: 1, backgroundColor: 'black'}}>
+        <AppContainer />
       </View>
     </Provider>
   );

@@ -5,7 +5,19 @@ import styles from './style';
 import { getCinemaDetails } from '../../actions/cinemaAction'
 
 class CinemaDetailInfo extends React.Component {
+  state= {
+    cinemaDetails: '',
+  }
+
+  async componentDidMount() {
+    const newCinemaDetails = await getCinemaDetails(1);
+    this.setState({
+      cinemaDetails: newCinemaDetails
+    })
+
+  }
   render() {
+    console.log('GET CINEMAS DETAILS HERE!!!!', this.state.cinemaDetails);
     return (
       <View style={styles.container}>
         <Text style={{ color: 'white' }}>Cinema Detailss INNFFOO</Text>
