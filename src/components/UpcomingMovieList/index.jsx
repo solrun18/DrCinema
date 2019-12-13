@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, Image, FlatList, View, TouchableOpacity } from 'react-native';
+import { WebView, ScrollView, Text, Image, FlatList, View, TouchableOpacity } from 'react-native';
 import styles from './style';
 import { invisible } from '../../styles/colors';
 import TrailerModal from '../TrailerModal';
@@ -36,21 +36,13 @@ class UpcomingMovieList extends React.Component {
                 <Text style={styles.text}>{releaseDate}</Text>
                 <View>
                   <TouchableOpacity
-                    onPress={() => this.setState({
-                      isTrailerModalOpen: true,
-                    })}
+                    onPress={this.props.onPress(trailers)}
                     disabled={!this.isTrailerAvailable(trailers)}
                     style={[styles.button, this.isTrailerAvailable(trailers) ? {} : { backgroundColor: invisible }]}>
                     <Text style={[styles.text, this.isTrailerAvailable(trailers) ? {} : { color: invisible }]}>
                       Horfa á stiklu!
                     </Text>
                   </TouchableOpacity>
-                  <TrailerModal
-                    trailerList={trailers}
-                    isOpen={true}
-                    closeModal={() =>
-                      this.setState({ isTrailerModalOpen: false })}
-                  />
                 </View>
               </View>
             );
