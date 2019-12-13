@@ -6,11 +6,7 @@ import {
 
 export default StyleSheet.create({
   container: {
-    marginTop: 50,
-    padding: 20,
     backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'space-around',
   },
   button: {
     marginTop: 30,

@@ -2,7 +2,6 @@ import React from 'react';
 import { WebView, ScrollView, Text, Image, FlatList, View, TouchableOpacity } from 'react-native';
 import styles from './style';
 import { invisible } from '../../styles/colors';
-import TrailerModal from '../TrailerModal';
 
 class UpcomingMovieList extends React.Component {
   state = {

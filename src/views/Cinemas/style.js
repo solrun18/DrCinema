@@ -12,4 +12,11 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 30,
+  }
 });

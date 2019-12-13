@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getUpcomingMovies } from '../../actions/upcomingAction';
 import UpcomingMovieList from '../../components/UpcomingMovieList';
 import styles from './style';
+import * as Animatable from 'react-native-animatable';
 
 class Trailers extends React.Component {
 
@@ -11,6 +12,11 @@ class Trailers extends React.Component {
     const { trailers } = this.props;
     return (
       <ScrollView style={{backgroundColor: 'black'}}>
+        <Animatable.Text
+          style={styles.header}
+          animation="slideInDown"
+          iterationCount={1}
+        >Stiklur</Animatable.Text>
         <FlatList
           data={trailers[0].results}
           extraData={trailers[0].results}

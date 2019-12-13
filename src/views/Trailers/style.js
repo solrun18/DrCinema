@@ -8,4 +8,11 @@ export default StyleSheet.create({
     width: 320,
     height: 230,
   },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 30,
+  }
 });

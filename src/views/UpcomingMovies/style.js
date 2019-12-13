@@ -8,4 +8,11 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
   },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 30,
+  }
 });
