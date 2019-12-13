@@ -25,4 +25,4 @@ class Trailers extends React.Component {
 //   };
 // };
 //
-// export default connect(mapStateToProps, { getUpcomingMovies })(UpcomingMovies);
+// export default connect(mapStateToProps, { getUpcomingMovies })(Trailers);

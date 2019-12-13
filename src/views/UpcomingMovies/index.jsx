@@ -16,8 +16,7 @@ class UpcomingMovies extends React.Component {
       <ScrollView style={styles.container}>
         <UpcomingMovieList
           upcomingMovies={this.props.upcomingMovies}
-          onPress={(trailers) =>
-            navigate('Trailers', { trailers })}
+          onPress={(trailers) => navigate('Trailers', { trailers })}
         />
       </ScrollView>
     );
