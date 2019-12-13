@@ -8,7 +8,6 @@ import { Video } from 'expo';
 class TrailerModal extends React.Component {
   render() {
     const {isOpen, closeModal, trailerList} = this.props;
-    console.log('TRAILER LIST INSIDE TRAILER MODAL ', trailerList);
     return (
       <Modal
         isOpen={isOpen}

@@ -6,6 +6,7 @@ import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
 import UpcomingMovies from '../views/UpcomingMovies';
 import MovieDetail from '../views/MovieDetail';
+import Trailers from '../views/Trailers';
 
 const CinemaStackNavigator = createStackNavigator({
   Main,
@@ -17,6 +18,7 @@ const CinemaStackNavigator = createStackNavigator({
 const UpcomingMoviesStackNavigator = createStackNavigator({
   Main,
   UpcomingMovies,
+  Trailers,
 });
 
 const DrawerNavigator = createDrawerNavigator({
