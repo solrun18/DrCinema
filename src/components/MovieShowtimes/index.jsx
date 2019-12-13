@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import styles from './style';
 import { Linking } from 'expo';
 import { getMovieDetailsById } from '../../actions/movieAction';
 import shortid from 'shortid';
@@ -10,17 +11,17 @@ import shortid from 'shortid';
 const MovieShowtimes = ({ showtimes }) =>{
   const data = showtimes.schedule.map(a =>({ ...a, id:shortid.generate()}))
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={data}
         renderItem={({ item: { time, purchase_url } }) => {
           return(
-            <View>
-              <Text style={{fontSize: 20, color: 'black'}}>{time}</Text>
+            <View style={styles.showtime}>
+              <Text style={styles.time}>{time}</Text>
               <TouchableOpacity onPress={()=>{
                 Linking.openURL(purchase_url)
               }}>
-                <Text>Kaupa Miða!</Text>
+                <Text style={styles.purchase}>Kaupa Miða!</Text>
               </TouchableOpacity>
             </View>
             );

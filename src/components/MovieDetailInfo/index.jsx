@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux'
 import styles from './style';
 import { getMovieDetailsById } from '../../actions/movieAction';
 import MovieShowtimes from '../MovieShowtimes';
+import { Icon } from 'react-native-elements';
 
 const MovieDetailInfo = ({ cinemaMovie }) =>{
   return (
@@ -17,8 +18,20 @@ const MovieDetailInfo = ({ cinemaMovie }) =>{
             style={styles.moviePoster}
             source={{uri: cinemaMovie.image}}
           />
-            <Text style={{width: 100}}>{cinemaMovie.genres}</Text>
-            <Text style={styles.movieDuration}>{cinemaMovie.duration}</Text>
+          <View style={styles.infoContainer}>
+            <Text style={styles.movieGenres}>{cinemaMovie.genres}</Text>
+            <View style={styles.durationContainer}>
+              <Icon
+                name="access-time"
+                type="material"
+                color="white"
+                iconStyle={styles.icon}
+                containerStyle={styles.iconContainer}
+              />
+              <Text style={styles.movieDuration}>{cinemaMovie.duration}</Text>
+            </View>
+          </View>
+          <Text style={styles.plot}>Söguþráður:</Text>
           <Text style={styles.moviePlot}>{cinemaMovie.plot}</Text>
         <MovieShowtimes
           showtimes={cinemaMovie.showtimes}

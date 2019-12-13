@@ -1,39 +1,69 @@
 import { StyleSheet } from 'react-native';
+import { lighterBlue } from '../../styles/colors';
 
 export default StyleSheet.create({
   detailContainer: {
-
+    position: 'relative',
   },
   upperViewContainer: {
     flexDirection: 'row',
     backgroundColor: 'green',
   },
   infoContainer: {
-    borderColor: 'pink',
-    borderWidth: 2,
+    position: 'absolute',
+    alignSelf: 'flex-end',
+    marginTop: 70,
+    paddingRight: 50,
+  },
+  header: {
+    flexDirection: 'row',
+    alignSelf: 'center',
   },
   movieTitle: {
     fontSize: 25,
     fontWeight: 'bold',
+    color: '#ffffff',
   },
   movieYear: {
     fontSize: 25,
     marginLeft: 8,
+    color: '#ffffff',
+  },
+  movieGenres:{
+    width: 140,
+    alignSelf: 'center',
+    fontSize: 20,
+    color: '#ffffff',
+  },
+  icon: {
+  },
+  iconContainer:{
+
   },
   movieDuration: {
     fontSize: 20,
+    color: '#ffffff',
+  },
+  durationContainer: {
+    flexDirection: 'row',
+  },
+  plot: {
+    fontSize: 20,
+    color: '#ffffff',
+    paddingLeft: 10,
   },
   moviePlot: {
-    fontSize: 15,
+    fontSize: 17,
     borderWidth: 1,
-    backgroundColor: 'red',
-    padding: 1,
+    marginHorizontal: 10,
+    color: '#ffffff',
+    backgroundColor:'#3b3b3b',
   },
   moviePoster: {
     width: 150,
-    height: 200,
-  },
-  header: {
-    flexDirection: 'row',
+    height: 210,
+    marginLeft: 20,
+    marginTop:20,
+    marginBottom: 20,
   },
 });
