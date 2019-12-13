@@ -12,6 +12,7 @@ class UpcomingMovies extends React.Component {
   }
 
   render() {
+    const { navigation: {navigate} } = this.props;
     return (
       <ScrollView style={styles.container}>
         <UpcomingMovieList
