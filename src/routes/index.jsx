@@ -18,7 +18,7 @@ const CinemaStackNavigator = createStackNavigator({
 const UpcomingMoviesStackNavigator = createStackNavigator({
   Main,
   UpcomingMovies,
-  Trailrs,
+  Trailers,
 });
 
 const DrawerNavigator = createDrawerNavigator({

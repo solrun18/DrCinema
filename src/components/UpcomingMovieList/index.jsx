@@ -10,7 +10,6 @@ class UpcomingMovieList extends React.Component {
   };
 
   isTrailerAvailable(trailers) {
-    console.log('TRAILERS!!!!!', trailers);
     if(trailers.length <= 0) {
       return false;
     } else {
@@ -20,6 +19,7 @@ class UpcomingMovieList extends React.Component {
 
   render() {
     const { isTrailerModalOpen } = this.state;
+    const {onPress} = this.props;
     return (
       <ScrollView>
         <FlatList
@@ -36,7 +36,7 @@ class UpcomingMovieList extends React.Component {
                 <Text style={styles.text}>{releaseDate}</Text>
                 <View>
                   <TouchableOpacity
-                    onPress={this.props.onPress(trailers)}
+                    onPress={() => onPress(trailers)}
                     disabled={!this.isTrailerAvailable(trailers)}
                     style={[styles.button, this.isTrailerAvailable(trailers) ? {} : { backgroundColor: invisible }]}>
                     <Text style={[styles.text, this.isTrailerAvailable(trailers) ? {} : { color: invisible }]}>

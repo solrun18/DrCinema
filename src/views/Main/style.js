@@ -33,10 +33,9 @@ export default StyleSheet.create({
     height: 300,
     alignItems: 'center',
   },
-  logoText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 30,
+  slogan: {
+    width: 120,
+    height: 30,
+    alignItems: 'center',
   },
 });
