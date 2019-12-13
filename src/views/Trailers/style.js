@@ -3,9 +3,10 @@ import {
 } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
+  trailerContainer: {
+    marginTop: 20,
+    width: 320,
+    height: 230,
   },
   header: {
     fontSize: 30,

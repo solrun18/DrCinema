@@ -16,6 +16,11 @@ class Cinemas extends React.Component {
     const { navigation: {navigate} } = this.props;
     return (
       <View style={styles.container}>
+      <Animatable.Text
+        style={styles.header}
+        animation="slideInDown"
+        iterationCount={1}
+      >Kvikmyndahús</Animatable.Text>
         <CinemaList
           onPress={(id, name, description, address, phone, website) =>
             navigate('CinemaDetail', { id, name, description, address, phone, website })

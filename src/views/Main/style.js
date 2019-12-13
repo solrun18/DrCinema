@@ -6,11 +6,7 @@ import {
 
 export default StyleSheet.create({
   container: {
-    marginTop: 50,
-    padding: 20,
     backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'space-around',
   },
   button: {
     marginTop: 30,
@@ -33,10 +29,9 @@ export default StyleSheet.create({
     height: 300,
     alignItems: 'center',
   },
-  logoText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 30,
+  slogan: {
+    width: 120,
+    height: 30,
+    alignItems: 'center',
   },
 });
