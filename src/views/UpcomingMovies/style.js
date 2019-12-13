@@ -1,7 +1,6 @@
 import {
   StyleSheet,
 } from 'react-native';
-import {darkerBlue, lighterBlue, grayish} from '../../styles/colors';
 
 export default StyleSheet.create({
   container: {
