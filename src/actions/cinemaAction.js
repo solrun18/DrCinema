@@ -2,6 +2,7 @@
 import * as constants from '../constants';
 import { GetAllCinemas, GetMoviesByCinemaId } from '../services/MovieService';
 
+
 export const getCinemasSuccess = (cinemas) => ({
   type: constants.GET_CINEMAS,
   payload: cinemas,

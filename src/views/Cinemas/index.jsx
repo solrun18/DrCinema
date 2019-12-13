@@ -13,7 +13,7 @@ class Cinemas extends React.Component {
   }
 
   render() {
-    const { navigation: {navigate} } = this.props
+    const { navigation: {navigate} } = this.props;
     return (
       <View style={styles.container}>
         <CinemaList

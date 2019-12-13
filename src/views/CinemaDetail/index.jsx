@@ -13,11 +13,14 @@ class CinemaDetail extends React.Component {
   }
 
   render() {
+    const { navigation: {navigate} } = this.props;
     return (
       <View style={styles.container}>
         <CinemaDetailInfo
           cinemaDetails={this.props.cinemaDetails}
           cinemaMovies={this.props.cinemaMovies}
+          onPress={(id, name, image, releaseYear, genres) =>
+            navigate('MovieDetail', {id, name, image, releaseYear, genres})}
         />
       </View>
     );

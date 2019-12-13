@@ -5,11 +5,13 @@ import Main from '../views/Main';
 import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
 import UpcomingMovies from '../views/UpcomingMovies';
+import MovieDetail from '../views/MovieDetail';
 
 const CinemaStackNavigator = createStackNavigator({
   Main,
   Cinemas,
   CinemaDetail,
+  MovieDetail
 });
 
 const UpcomingMoviesStackNavigator = createStackNavigator({
