@@ -10,13 +10,13 @@ class Trailers extends React.Component {
   render() {
     const { trailers } = this.props;
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'black'}}>
         <FlatList
           data={trailers[0].results}
           extraData={trailers[0].results}
           renderItem={({ item: { name, url }}) => {
             return(
-              <View style={{flex: 1}}>
+              <View style={{flex: 1, alignSelf: 'center'}}>
                 <WebView
                   startInLoadingState={true}
                   automaticallyAdjustContentInsets={false}
