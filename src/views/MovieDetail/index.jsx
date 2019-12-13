@@ -1,17 +1,17 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import * as Animatable from 'react-native-animatable';
+import { ScrollView, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux'
 import styles from './style';
-import { getMovieDetailsById } from '../../actions/movieAction';
 import MovieDetailInfo from '../../components/MovieDetailInfo';
 
 class MovieDetail extends React.Component {
   render() {
     return(
-      <View>
-        <Text>LOLLLLOLOLOLO</Text>
-      </View>
+      <ScrollView style={styles.container}>
+        <MovieDetailInfo
+          cinemaMovie={this.props.movieDetails[0]}
+        />
+      </ScrollView>
     )
   }
 }

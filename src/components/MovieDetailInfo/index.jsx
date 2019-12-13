@@ -1,28 +1,32 @@
 import React from 'react';
-import { ScrollView, Text, FlatList } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux'
 import styles from './style';
 import { getMovieDetailsById } from '../../actions/movieAction';
+import Genres from '../Genres';
+import MovieShowtimes from '../MovieShowtimes';
 
 const MovieDetailInfo = ({ cinemaMovie }) =>{
   return (
-    <SafeAreaView>
-      <Text>{cinemaMovie.name}</Text>
-      <Text>{cinemaMovie.releaseYear}</Text>
-      <FlatList
-        data={cinemaMovie.genres}
-        extraData={cinemaMovie.genres}
-        renderItem={({item: {name}}) => {
-          return (
-            <View>
-              <Text>{name}</Text>
-              <Text>{releaseYear}</Text>
-            </View>
-          )
-        }}
-        keyExtractor={(cinemaMovie) => cinemaMovie.id}
-      />
-    </SafeAreaView>
+      <View style={styles.detailContainer}>
+        <View style={styles.header}>
+          <Text style={styles.movieTitle}>{cinemaMovie.name}</Text>
+          <Text style={styles.movieYear}>{cinemaMovie.releaseYear}</Text>
+        </View>
+          <Image
+            style={styles.moviePoster}
+            source={{uri: cinemaMovie.image}}
+          />
+            <Genres
+              genres={cinemaMovie.genres}
+            />
+            <Text style={styles.movieDuration}>{cinemaMovie.duration}</Text>
+          <Text style={styles.moviePlot}>{cinemaMovie.plot}</Text>
+        <MovieShowtimes
+          showtimes={cinemaMovie.showtimes}
+        />
+      </View>
   )
 }
+export default MovieDetailInfo;
