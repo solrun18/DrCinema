@@ -6,9 +6,6 @@ import UpcomingMovieList from '../../components/UpcomingMovieList'
 import styles from './style';
 
 class Trailers extends React.Component {
-  // async componentDidMount() {
-  //   await this.props.getUpcomingMovies();
-  // }
 
   render() {
     return (
@@ -19,10 +16,10 @@ class Trailers extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     upcomingMovies: state.upcomingMovies
-//   };
-// };
-//
-// export default connect(mapStateToProps, { getUpcomingMovies })(Trailers);
+const mapStateToProps = (state) => {
+  return {
+    upcomingMovies: state.trailers
+  };
+};
+
+export default connect(mapStateToProps)(Trailers);
