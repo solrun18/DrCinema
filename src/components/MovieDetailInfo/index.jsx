@@ -18,9 +18,7 @@ const MovieDetailInfo = ({ cinemaMovie }) =>{
             style={styles.moviePoster}
             source={{uri: cinemaMovie.image}}
           />
-            <Genres
-              genres={cinemaMovie.genres}
-            />
+            <Text style={{width: 100}}>{cinemaMovie.genres}</Text>
             <Text style={styles.movieDuration}>{cinemaMovie.duration}</Text>
           <Text style={styles.moviePlot}>{cinemaMovie.plot}</Text>
         <MovieShowtimes
