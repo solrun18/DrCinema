@@ -1,6 +1,6 @@
 
 import * as constants from '../constants';
-import { GetAllCinemas, GetMoviesByCinemaId } from '../services/MovieService';
+import { GetAllCinemas, GetMoviesByCinemaId, connect } from '../services/MovieService';
 
 
 export const getCinemasSuccess = (cinemas) => ({

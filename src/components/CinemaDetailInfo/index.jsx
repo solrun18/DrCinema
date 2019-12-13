@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, TouchableOpacity ,ScrollView, View, Text, SafeAreaView, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
+import CinemaMovieList from '../CinemaMovieList';
 import styles from './style';
 
 const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies, onPress }) => {
-  // const { navigation:{navigate}} = this.props;
   return (
     <ScrollView>
       <FlatList
@@ -24,27 +24,9 @@ const CinemaDetailInfo = ({ cinemaDetails, cinemaMovies, onPress }) => {
         }}
         keyExtractor={(cinemaDetail) => cinemaDetail.id}
       />
-      <FlatList
-        numColumns={2}
-        data={cinemaMovies}
-        extraData={cinemaMovies}
-        renderItem={({ item: { id, name, image, releaseYear, genres } }) => {
-          return (
-            <TouchableOpacity
-              onPress={() => onPress(id, name, image, releaseYear, genres)}
-            >
-              <View style={styles.movieContainer}>
-                <Text style={styles.text}>{name}</Text>
-                <Text style={styles.text}>{releaseYear}</Text>
-                <Image
-                  source={{ uri: image }}
-                  style={styles.image}
-                  />
-                </View>
-              </TouchableOpacity>
-          );
-        }}
-        keyExtractor={(cinemaMovie) => cinemaMovie.id}
+      <CinemaMovieList
+        cinemaMovies={cinemaMovies}
+        onPress={(id, name, image, releaseYear, genres )=> onPress(id, name, image, releaseYear, genres)}
       />
     </ScrollView>
   );
