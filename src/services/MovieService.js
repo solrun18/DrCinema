@@ -3,7 +3,6 @@ const CINEMAENDPOINT = 'http://api.kvikmyndir.is/theaters';
 const MOVIEENDPOINT = 'http://api.kvikmyndir.is/movies';
 const AUTHENTICATEENDPOINT = 'http://api.kvikmyndir.is/authenticate';
 const fetch = require('node-fetch');
-import shortid from 'shortid';
 
 export const GetAllCinemas = () => ({
   getCinemas: () => fetch(CINEMAENDPOINT, {

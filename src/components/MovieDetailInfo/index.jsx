@@ -4,7 +4,6 @@ import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux'
 import styles from './style';
 import { getMovieDetailsById } from '../../actions/movieAction';
-import Genres from '../Genres';
 import MovieShowtimes from '../MovieShowtimes';
 
 const MovieDetailInfo = ({ cinemaMovie }) =>{

@@ -4,7 +4,6 @@ import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux'
 import { Linking } from 'expo';
 import { getMovieDetailsById } from '../../actions/movieAction';
-import Genres from '../Genres';
 import shortid from 'shortid';
 
 
