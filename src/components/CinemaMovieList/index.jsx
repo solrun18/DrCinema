@@ -1,13 +1,12 @@
 import React from 'react';
-import { Image, TouchableOpacity ,ScrollView, View, Text, SafeAreaView, FlatList } from 'react-native';
-import PropTypes from 'prop-types';
+import { Image, TouchableOpacity, View, Text, FlatList } from 'react-native';
 import styles from './style';
 
-const CinemaMovieList = ({cinemaMovies, onPress}) => {
-  return(
-    <View style={{flex: 1 }}>
+const CinemaMovieList = ({ cinemaMovies, onPress }) => {
+  return (
+    <View style={{ flex: 1 }}>
       <FlatList
-        numColumns={2}
+        numColumns={1}
         data={cinemaMovies}
         extraData={cinemaMovies}
         renderItem={({ item: { id, name, image, releaseYear, genres } }) => {
@@ -16,13 +15,17 @@ const CinemaMovieList = ({cinemaMovies, onPress}) => {
               onPress={() => onPress(id, name, image, releaseYear, genres)}
             >
               <View style={styles.movieContainer}>
-                <Text style={styles.text}>{name}</Text>
-                <Text style={styles.text}>{releaseYear}</Text>
-                <Image
-                  source={{ uri: image }}
-                  style={styles.image}
+                <View style={styles.header}>
+                  <Text style={styles.name}>{name}</Text>
+                  <Text style={styles.releaseYear}>{releaseYear}</Text>
+                </View>
+                <View style={styles.innerContainer}>
+                  <Image
+                    source={{ uri: image }}
+                    style={styles.image}
                   />
-                <Text style={{color:'red'}}>{genres}</Text>
+                  <Text style={styles.genres}>{genres}</Text>
+                </View>
               </View>
             </TouchableOpacity>
           );
@@ -30,6 +33,6 @@ const CinemaMovieList = ({cinemaMovies, onPress}) => {
         keyExtractor={(cinemaMovie) => cinemaMovie.id}
       />
     </View>
-  )
-}
+  );
+};
 export default CinemaMovieList;

@@ -57,7 +57,7 @@ export const GetMoviesByCinemaId = (cinemaId) => ({
 const GetGenres = (genreArray) => {
   let genreStr = '';
   for(x=0; x<genreArray.length;x+=1){
-    genreStr += genreArray[x].Name + ' ';
+    genreStr += genreArray[x].Name + '\n';
   }
   return genreStr;
 }

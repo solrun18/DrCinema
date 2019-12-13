@@ -29,11 +29,11 @@ export default StyleSheet.create({
     marginLeft: 8,
     color: '#ffffff',
   },
-  movieGenres:{
-    width: 140,
+  movieGenres: {
     alignSelf: 'center',
     fontSize: 20,
     color: '#ffffff',
+    maxWidth: 140,
   },
   icon: {
   },

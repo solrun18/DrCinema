@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableOpacity ,ScrollView, View, Text, SafeAreaView, FlatList } from 'react-native';
+import { ScrollView, View, Text, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import CinemaMovieList from '../CinemaMovieList';
 import styles from './style';

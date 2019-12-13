@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux'
-import * as Animatable from 'react-native-animatable';
 import styles from './style';
 import CinemaDetailInfo from '../../components/CinemaDetailInfo';
 import { getCinemaMovies } from '../../actions/cinemaAction';
@@ -19,8 +17,7 @@ class CinemaDetail extends React.Component {
         <CinemaDetailInfo
           cinemaDetails={this.props.cinemaDetails}
           cinemaMovies={this.props.cinemaMovies}
-          onPress={(id, name, image, releaseYear, genres) =>
-            navigate('MovieDetail', {id, name, image, releaseYear, genres})}
+          onPress={(id, name, image, releaseYear, genres) => navigate('MovieDetail', { id, name, image, releaseYear, genres })}
         />
       </View>
     );
