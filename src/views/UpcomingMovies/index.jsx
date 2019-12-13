@@ -1,11 +1,10 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { getUpcomingMovies } from '../../actions/upcomingAction';
-import UpcomingMovieList from '../../components/UpcomingMovieList';
-import styles from './style';
-import Trailers from '../Trailers';
 import * as Animatable from 'react-native-animatable';
+import { getUpcomingMovies } from '../../actions/upcomingAction';
+import UpcomingMovieList from '../../components/UpcomingMovieList'
+import styles from './style';
 
 class UpcomingMovies extends React.Component {
   async componentDidMount() {
@@ -16,11 +15,13 @@ class UpcomingMovies extends React.Component {
     const { navigation: {navigate} } = this.props;
     return (
       <ScrollView style={styles.container}>
-      <Animatable.Text
-        style={styles.header}
-        animation="slideInDown"
-        iterationCount={1}
-      >Væntanlegar í bíó</Animatable.Text>
+        <Animatable.Text
+          style={styles.header}
+          animation="slideInDown"
+          iterationCount={1}
+        >
+        Væntanlegar í bíó
+        </Animatable.Text>
         <UpcomingMovieList
           onPress={(trailers) => navigate('Trailers', { trailers })}
           upcomingMovies={this.props.upcomingMovies}
