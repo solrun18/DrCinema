@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, Flatlist } from 'react-native';
+import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { getUpcomingMovies } from '../../actions/upcomingAction';
 import UpcomingMovieList from '../../components/UpcomingMovieList'

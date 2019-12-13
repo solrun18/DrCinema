@@ -1,13 +1,10 @@
 import React from 'react';
-import { ScrollView, View, Text, FlatList, WebView } from 'react-native';
+import { ScrollView, View, FlatList, WebView } from 'react-native';
 import { connect } from 'react-redux';
-import { getUpcomingMovies } from '../../actions/upcomingAction';
-import UpcomingMovieList from '../../components/UpcomingMovieList';
 import styles from './style';
 import * as Animatable from 'react-native-animatable';
 
 class Trailers extends React.Component {
-
   render() {
     const { trailers } = this.props;
     return (
@@ -21,8 +18,8 @@ class Trailers extends React.Component {
           data={trailers[0].results}
           extraData={trailers[0].results}
           renderItem={({ item: { name, url }}) => {
-            return(
-              <View style={{flex: 1, alignSelf: 'center'}}>
+            return (
+              <View style={{ flex: 1, alignSelf: 'center' }}>
                 <WebView
                   startInLoadingState={true}
                   automaticallyAdjustContentInsets={false}
@@ -38,6 +35,7 @@ class Trailers extends React.Component {
     );
   }
 }
+
 const mapStateToProps = (state, ownProps) => {
   return {
     trailers: ownProps.navigation.state.params.trailers
